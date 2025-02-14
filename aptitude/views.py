@@ -77,7 +77,7 @@ def Logical_Reasoning(request):
 
 @login_required(login_url="/login/")
 def Questions(request,category):
-    context = {'question':Question.objects.all().filter(category=category)}
+    context = {'question':Question.objects.all().filter(category=category),  'category': category}
     return render(request,'questions.html',context)
 
 @login_required(login_url="/login/")
